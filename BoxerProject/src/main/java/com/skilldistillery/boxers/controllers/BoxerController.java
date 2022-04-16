@@ -16,8 +16,6 @@ public class BoxerController {
 	
 	@RequestMapping(path= {"/", "home.do"})
 	public String home(Model model) {
-		Boxer boxer = dao.findById(1);
-		model.addAttribute("DEBUG", boxer);
 		return "home";
 	}
 

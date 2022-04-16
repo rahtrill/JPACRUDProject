@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home Page</title>
+<title>Match-up Boxer Page</title>
 </head>
 <body>
 
-	<h1>Welcome to the Boxer Project</h1>
+	<h1>Match-up boxers</h1>
 
 	<ul>
 		<li><a href="/">Home</a></li>
