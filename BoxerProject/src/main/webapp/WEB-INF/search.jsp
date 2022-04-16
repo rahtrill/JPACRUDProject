@@ -12,12 +12,12 @@
 	<h1>Search for a boxer</h1>
 
 	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="search.jsp">Search</a></li>
-		<li><a href="add.jsp">Add</a></li>
-		<li><a href="update.jsp">Update</a></li>
-		<li><a href="remove.jsp">Remove</a></li>
-		<li><a href="matchup.jsp">Match-up</a></li>
+		<li><a href="home.do">Home</a></li>
+		<li><a href="search.do">Search</a></li>
+		<li><a href="add.do">Add</a></li>
+		<li><a href="update.do">Update</a></li>
+		<li><a href="remove.do">Remove</a></li>
+		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
 
 </body>

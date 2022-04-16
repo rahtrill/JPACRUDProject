@@ -18,5 +18,30 @@ public class BoxerController {
 	public String home(Model model) {
 		return "home";
 	}
+	
+	@RequestMapping(path=  "search.do")
+	public String search(Model model) {
+		return "search";
+	}
+	
+	@RequestMapping(path=  "add.do")
+	public String add(Model model) {
+		return "add";
+	}
+	
+	@RequestMapping(path=  "update.do")
+	public String update(Model model) {
+		return "update";
+	}
+	
+	@RequestMapping(path=  "remove.do")
+	public String remove(Model model) {
+		return "remove";
+	}
+	
+	@RequestMapping(path=  "matchup.do")
+	public String matchup(Model model) {
+		return "matchup";
+	}
 
 }
