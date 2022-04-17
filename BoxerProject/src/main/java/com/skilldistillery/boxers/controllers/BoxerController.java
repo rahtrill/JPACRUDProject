@@ -88,5 +88,19 @@ public class BoxerController {
 	public String searchedbyweightclass(Model model) {
 		return "multipleresult";
 	}
+	
+	// ADD CONTROLLERS
+	
+	@PostMapping("addBoxer.do")
+	public String addBoxer(Boxer boxer, Model model, RedirectAttributes redir) {
+		Boxer boxer1 = dao.addBoxer(boxer);
+		redir.addFlashAttribute("boxer", boxer1);
+		return "redirect:addedBoxer.do";
+	}
+	
+	@GetMapping("addedBoxer.do")
+	public String addedBoxer(Model model) {
+		return "result";
+	}
 
 }

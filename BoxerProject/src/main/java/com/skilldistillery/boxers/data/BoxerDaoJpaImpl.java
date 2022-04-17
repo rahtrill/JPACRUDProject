@@ -42,5 +42,13 @@ public class BoxerDaoJpaImpl implements BoxerDAO {
 		
 		return boxer;
 	}
+	
+	// INSERT QUERY METHODS
+	
+	@Override
+	public Boxer addBoxer(Boxer boxer) {
+		em.persist(boxer);
+		return em.find(Boxer.class, boxer.getId());
+	}
 
 }
