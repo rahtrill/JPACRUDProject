@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Boxer Id Page</title>
+<title>Boxer Result Page</title>
 </head>
 <body>
 
@@ -27,6 +27,14 @@
 	<li>Total fights: ${boxer.totalFights}</li>
 	<li>Weight classes: ${boxer.weightClass}</li>
 	</ul>
+	
+	<form action="updateForm.do" method="get">
+		<button type="submit" name="id" value="${boxer.id}">Update Boxer</button>
+	</form>
+	
+	<form action="deleteBoxer.do" method="post">
+		<button type="submit" name="id" value="${boxer.id}">Delete Boxer</button>
+	</form>
 	
 </body>
 </html>

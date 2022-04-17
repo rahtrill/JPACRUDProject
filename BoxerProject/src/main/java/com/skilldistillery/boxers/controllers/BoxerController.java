@@ -48,7 +48,7 @@ public class BoxerController {
 	
 	@RequestMapping(path=  "matchup.do")
 	public String matchup(Model model) {
-		return "redirect:searchById.do";
+		return "matchup";
 	}
 	
 	// SEARCH CONTROLLERS
@@ -101,6 +101,51 @@ public class BoxerController {
 	@GetMapping("addedBoxer.do")
 	public String addedBoxer(Model model) {
 		return "result";
+	}
+	
+	// UPDATE CONTROLLERS
+	
+	@GetMapping("updateForm.do")
+	public String updateForm(int id, Model model) {
+		Boxer boxer = dao.findById(id);
+		model.addAttribute("boxer", boxer);
+		return "updateForm";
+	}
+	
+	@PostMapping("updateBoxer.do")
+	public String updateBoxer(Boxer boxer, Model model, RedirectAttributes redir) {
+		Boxer boxer1 = dao.updateBoxer(boxer);
+		redir.addFlashAttribute("boxer", boxer1);
+		return "redirect:updatedBoxer.do";
+	}
+	
+	@GetMapping("updatedBoxer.do")
+	public String updatedBoxer(Model model) {
+		return "result";
+	}
+	
+	// DELETE CONTROLLERS
+	
+	@PostMapping("deleteBoxer.do")
+	public String deleteBoxer(int id, Model model, RedirectAttributes redir) {
+		Boxer boxer = dao.findById(id);
+		boolean deleted = dao.deleteBoxer(boxer);
+		redir.addFlashAttribute("deleted", deleted);
+		return "redirect:deletedBoxer.do";
+	}
+	
+	@GetMapping("deletedBoxer.do")
+	public String deletedBoxer(Model model) {
+		return "deleted";
+	}
+	
+	// MATCHUP CONTROLLERS
+	
+	@GetMapping("mathcupBoxer.do")
+	public String matchupBoxer(int id1, int id2, Model model) {
+		Boxer boxer1 = dao.findById(id1);
+		Boxer boxer2 = dao.findById(id2);
+		return "matchupResult";
 	}
 
 }

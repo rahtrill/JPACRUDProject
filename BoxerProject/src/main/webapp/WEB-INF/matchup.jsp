@@ -19,6 +19,14 @@
 		<li><a href="remove.do">Remove</a></li>
 		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
+	
+	<h2>Who would you like to match up? (TEMPORARY TBD)</h2>
+	
+	<form action="matchupBoxer" method="get">
+	<input type="text" name="id1">
+	<input type="text" name="id2">
+	<input type="submit" name="submit">
+	</form>
 
 </body>
 </html>

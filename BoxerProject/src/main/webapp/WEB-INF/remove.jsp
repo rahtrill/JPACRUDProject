@@ -19,6 +19,10 @@
 		<li><a href="remove.do">Remove</a></li>
 		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
+	
+	<h1>Delete By Searching:</h1>
+
+<a href="search.do">Search here</a>
 
 </body>
 </html>

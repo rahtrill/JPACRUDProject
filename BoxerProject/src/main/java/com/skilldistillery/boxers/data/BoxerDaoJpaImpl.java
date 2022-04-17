@@ -50,5 +50,47 @@ public class BoxerDaoJpaImpl implements BoxerDAO {
 		em.persist(boxer);
 		return em.find(Boxer.class, boxer.getId());
 	}
+	
+	// UPDATE QUERY METHODS
+	
+	@Override
+	public Boxer updateBoxer(Boxer boxer) {
+		
+		Boxer newBoxer = em.find(Boxer.class, boxer.getId());
+		
+		newBoxer.setFirstName(boxer.getFirstName());
+		newBoxer.setLastName(boxer.getLastName());
+		newBoxer.setHeight(boxer.getHeight());
+		newBoxer.setWeightClass(boxer.getWeightClass());
+		newBoxer.setNationality(boxer.getNationality());
+		newBoxer.setReach(boxer.getReach());
+		newBoxer.setKnockouts(boxer.getKnockouts());
+		newBoxer.setTotalFights(boxer.getTotalFights());
+		
+		return boxer;
+	}
+	
+	// INSERT QUERY METHODS
+	
+		@Override
+		public boolean deleteBoxer(Boxer boxer) {
+			boolean removed = false;
+			
+			if (em.find(Boxer.class, boxer.getId()) != null) {
+				em.remove(boxer);
+				removed = true;
+			}
+			
+			return removed;
+		}
+
+		@Override
+		public Boxer matchupBoxers(Boxer boxer1, Boxer boxer2) {
+			int boxerpoint1 = 0, boxerpoint2 = 0;
+			
+			
+			
+			return null;
+		}
 
 }

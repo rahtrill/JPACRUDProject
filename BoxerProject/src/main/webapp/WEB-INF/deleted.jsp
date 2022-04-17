@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update Boxer Page</title>
+<title>Deleted Boxer Page</title>
 </head>
 <body>
-
-	<h1>Update a boxer</h1>
 
 	<ul>
 		<li><a href="home.do">Home</a></li>
@@ -19,10 +17,15 @@
 		<li><a href="remove.do">Remove</a></li>
 		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
-
-<h1>Update By Searching:</h1>
-
-<a href="search.do">Search here</a>
-
+	
+	<c:choose>
+	<c:when test="${deleted == true}">
+	<h2>The boxer has been deleted!</h2>
+	</c:when>
+	<c:otherwise>
+	<h2>There was an error! Please try again.</h2>
+	</c:otherwise>
+	</c:choose>
+	
 </body>
 </html>

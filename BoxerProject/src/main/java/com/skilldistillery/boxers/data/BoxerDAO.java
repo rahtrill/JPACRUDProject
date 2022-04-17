@@ -9,4 +9,7 @@ public interface BoxerDAO {
 	public List<Boxer> findByName(String name);
 	public List<Boxer> findByWeightClass(String wc);
 	public Boxer addBoxer(Boxer boxer);
+	public Boxer updateBoxer(Boxer boxer);
+	public boolean deleteBoxer(Boxer boxer);
+	public Boxer matchupBoxers(Boxer boxer1, Boxer boxer2);
 }
