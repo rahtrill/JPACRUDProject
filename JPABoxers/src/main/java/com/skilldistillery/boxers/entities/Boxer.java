@@ -1,5 +1,7 @@
 package com.skilldistillery.boxers.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -134,4 +136,25 @@ public class Boxer {
 		return firstName + " " + lastName;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(firstName, height, id, knockouts, lastName, nationality, reach, totalFights, weightClass);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Boxer other = (Boxer) obj;
+		return Objects.equals(firstName, other.firstName) && height == other.height && id == other.id
+				&& knockouts == other.knockouts && Objects.equals(lastName, other.lastName)
+				&& Objects.equals(nationality, other.nationality)
+				&& Double.doubleToLongBits(reach) == Double.doubleToLongBits(other.reach)
+				&& totalFights == other.totalFights && Objects.equals(weightClass, other.weightClass);
+	}
+	
 }

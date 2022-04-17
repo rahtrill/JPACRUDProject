@@ -141,10 +141,18 @@ public class BoxerController {
 	
 	// MATCHUP CONTROLLERS
 	
-	@GetMapping("mathcupBoxer.do")
+	@GetMapping("matchupBoxer.do")
 	public String matchupBoxer(int id1, int id2, Model model) {
 		Boxer boxer1 = dao.findById(id1);
 		Boxer boxer2 = dao.findById(id2);
+		List<Integer> percentage = dao.matchupBoxers(boxer1, boxer2);
+		int percentage1 = percentage.get(0);
+		int percentage2 = percentage.get(1);
+		
+		model.addAttribute("player1", boxer1); 
+		model.addAttribute("player2", boxer2); 
+		model.addAttribute("p1percent", percentage1); 
+		model.addAttribute("p2percent", percentage2);
 		return "matchupResult";
 	}
 

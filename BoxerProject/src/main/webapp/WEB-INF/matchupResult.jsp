@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Match-up Boxer Page</title>
+<title>Boxer Result Page</title>
 </head>
 <body>
-
-	<h1>Match-up boxers</h1>
 
 	<ul>
 		<li><a href="home.do">Home</a></li>
@@ -20,13 +18,15 @@
 		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
 	
-	<h2>Who would you like to match up? (TEMPORARY TBD)</h2>
+	<c:choose>
+	<c:when test="${! player1.equals(player2)}">
+	<h1>${player1.fullName} has a ${p1percent}% chance of winning!</h1>
+	<h1>${player2.fullName} has a ${p2percent}% chance of winning!</h1>
+	</c:when>
+	<c:otherwise>
+	<h1>You cannot compare a boxer to themself!</h1>
+	</c:otherwise>
+	</c:choose>
 	
-	<form action="matchupBoxer.do" method="get">
-	<input type="text" name="id1">
-	<input type="text" name="id2">
-	<input type="submit" name="submit">
-	</form>
-
 </body>
 </html>
