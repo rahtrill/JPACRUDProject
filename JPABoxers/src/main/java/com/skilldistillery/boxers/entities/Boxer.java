@@ -129,5 +129,9 @@ public class Boxer {
 	public void setTotalFights(int totalFights) {
 		this.totalFights = totalFights;
 	}
+	
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
 
 }

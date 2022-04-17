@@ -20,5 +20,23 @@
 		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
 
+	<h3>Search By ID</h3>
+
+	<form action="searchById.do" method="post">
+		<input type="text" name="id" /> <input type="submit" name="submit" />
+	</form>
+
+	<h3>Search By Name</h3>
+
+	<form action="searchByName.do" method="post">
+		<input type="text" name="name" /> <input type="submit" name="submit" />
+	</form>
+
+	<h3>Search By Weight Class</h3>
+
+	<form action="searchByWeightClass.do" method="post">
+		<input type="text" name="wc" /> <input type="submit" name="submit" />
+	</form>
+
 </body>
 </html>
