@@ -51,6 +51,12 @@ public class BoxerController {
 		return "matchup";
 	}
 	
+	@RequestMapping(path=  "result.do")
+	public String result(int id, Model model) {
+		model.addAttribute("boxer", dao.findById(id));
+		return "result";
+	}
+	
 	// SEARCH CONTROLLERS
 	
 	@PostMapping("searchById.do")

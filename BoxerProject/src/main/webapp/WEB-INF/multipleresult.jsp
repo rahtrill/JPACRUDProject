@@ -20,19 +20,32 @@
 
 	<h1>Results for ${search}</h1>
 
-	<c:forEach var="b" items="${boxer}">
-		<ul>
-			<li>ID: ${b.id}</li>
-			<li>Name: ${b.fullName}</li>
-			<li>Height: ${b.height}</li>
-			<li>Reach: ${b.reach}</li>
-			<li>Knockouts: ${b.knockouts}</li>
-			<li>Total fights: ${b.totalFights}</li>
-			<li>Weight classes: ${b.weightClass}</li>
-		</ul>
-	</c:forEach>
-
-
+	<table>
+		<thead>
+			<tr>
+				<td>View</td>
+				<td>ID</td>
+				<td>Name</td>
+				<td>Height</td>
+				<td>Reach</td>
+				<td>Knockouts</td>
+				<td>Total fights</td>
+				<td>Weight classes</td>
+			</tr>
+		</thead>
+		<c:forEach var="b" items="${boxer}">
+			<tr>
+				<td><form action="result.do"><button style="button" name="id" value="${b.id}">View</button></form></td>
+				<td>${b.id}</td>
+				<td>${b.fullName}</td>
+				<td>${b.height}</td>
+				<td>${b.reach}</td>
+				<td>${b.knockouts}</td>
+				<td>${b.totalFights}</td>
+				<td>${b.weightClass}</td>
+			</tr>
+		</c:forEach>
+	</table>
 
 </body>
 </html>
