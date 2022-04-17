@@ -5,18 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Boxer Id Page</title>
+<title>Boxer Multiple Search Results</title>
 </head>
 <body>
 
-	<ul>
-		<li><a href="home.do">Home</a></li>
-		<li><a href="search.do">Search</a></li>
-		<li><a href="add.do">Add</a></li>
-		<li><a href="update.do">Update</a></li>
-		<li><a href="remove.do">Remove</a></li>
-		<li><a href="matchup.do">Match-up</a></li>
-	</ul>
+<%@ include file="bootstrapSetup.jsp" %>
+
+<nav class="navbar navbar-dark bg-dark">
+	<span class="navbar-brand mb-0 h1">Search Results</span>
+  <a class="navbar-brand" href="home.do">Home</a>
+  <a class="navbar-brand" href="search.do">Search</a>
+  <a class="navbar-brand" href="add.do">Add</a>
+  <a class="navbar-brand" href="update.do">Update</a>
+  <a class="navbar-brand" href="remove.do">Remove</a>
+  <a class="navbar-brand" href="matchup.do">Match-Up</a>
+</nav>
 
 	<h1>Results for ${search}</h1>
 
