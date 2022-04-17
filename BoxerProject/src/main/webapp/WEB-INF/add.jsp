@@ -28,16 +28,51 @@
 	Height (in inches): <input type="text" name="height">
 	<br>
 	Weight Class(s):
+	<table>
+	<tr>
+	<td>
+	<input type="checkbox" name="weightClass" value="Minimumweight">
+	<label for="Minimumweight">Minimumweight (105 lb - 108 lb)</label>
+	</td>
+	<td>
+	<input type="checkbox" name="weightClass" value="Flyweight">
+	<label for="Flyweight">Flyweight (108 lb - 118 lb)</label>
+	</td>
+	<td>
+	<input type="checkbox" name="weightClass" value="Bantamweight">
+	<label for="Bantamweight">Bantamweight (118 lb - 126 lb)</label>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<input type="checkbox" name="weightClass" value="Featherweight">
+	<label for="Featherweight">Featherweight (126 lb - 135 lb)</label>
+	</td>
+	<td>
+	<input type="checkbox" name="weightClass" value="Lightweight">
+	<label for="Lightweight">Lightweight (135 lb - 147 lb)</label>
+	</td>
+	<td>
+	<input type="checkbox" name="weightClass" value="Welterweight">
+	<label for="Welterweight">Welterweight (147 lb - 160 lb)</label>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<input type="checkbox" name="weightClass" value="Middleweight">
+	<label for="Middleweight">Middleweight (160 lb - 175 lb)</label>
+	</td>
+	<td>
+	<input type="checkbox" name="weightClass" value="Cruiserweight">
+	<label for="Cruiserweight">Cruiserweight (175 lb - 200 lb)</label>
+	</td>
+	<td>
+	<input type="checkbox" name="weightClass" value="Heavyweight">
+	<label for="Heavyweight">Heavyweight (200 lb +)</label>
+	</td>
+	</tr>
+	</table>
 	<br> 
-	Minimumweight (105 lb - 108 lb)<input type="checkbox" name="weightClass" value="Minimumweight">
-	Flyweight (108 lb - 118 lb)<input type="checkbox" name="weightClass" value="Flyweight">
-	Bantamweight (118 lb - 126 lb)<input type="checkbox" name="weightClass" value="Bantamweight">
-	Featherweight (126 lb - 135 lb)<input type="checkbox" name="weightClass" value="Featherweight">
-	Lightweight (135 lb - 147 lb)<input type="checkbox" name="weightClass" value="Lightweight">
-	Welterweight (147 lb - 160 lb)<input type="checkbox" name="weightClass" value="Welterweight">
-	Middleweight (160 lb - 175 lb)<input type="checkbox" name="weightClass" value="Middleweight">
-	Heavyweight (175 lb +)<input type="checkbox" name="weightClass" value="Heavyweight">
-	<br>
 	Nationality: <input type="text" name="nationality">
 	<br>
 	Reach (in inches): <input type="text" name="reach">

@@ -68,6 +68,7 @@ public class BoxerController {
 	@PostMapping("searchByName.do")
 	public String searchbyname(String name, Model model, RedirectAttributes redir) {
 		List<Boxer> boxer = dao.findByName(name);
+		redir.addFlashAttribute("search", name);
 		redir.addFlashAttribute("boxer", boxer);
 		return "redirect:searchedByName.do";
 	}
@@ -80,6 +81,7 @@ public class BoxerController {
 	@PostMapping("searchByWeightClass.do")
 	public String searchbyweightclass(String wc, Model model, RedirectAttributes redir) {
 		List<Boxer> boxer = dao.findByWeightClass(wc);
+		redir.addFlashAttribute("search", wc);
 		redir.addFlashAttribute("boxer", boxer);
 		return "redirect:searchedByWeightClass.do";
 	}

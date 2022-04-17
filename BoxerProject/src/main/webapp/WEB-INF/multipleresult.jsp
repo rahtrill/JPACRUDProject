@@ -18,7 +18,7 @@
 		<li><a href="matchup.do">Match-up</a></li>
 	</ul>
 
-	<h1>Results for TBD</h1>
+	<h1>Results for ${search}</h1>
 
 	<c:forEach var="b" items="${boxer}">
 		<ul>
