@@ -28,7 +28,7 @@
 			<c:forEach var="b" items="${boxers}">
 				<tr>
 					<td scope="row"><form action="updateForm.do" method="get">
-							<button style="button" name="id" value="${b.id}">Update</button>
+							<button class="btn btn-primary style="button" name="id" value="${b.id}">Update</button>
 						</form></td>
 					<td>${b.id}</td>
 					<td>${b.fullName}</td>

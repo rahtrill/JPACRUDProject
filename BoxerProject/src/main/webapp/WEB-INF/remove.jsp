@@ -28,7 +28,7 @@
 			<c:forEach var="b" items="${boxers}">
 				<tr>
 					<td scope="row"><form action="deleteBoxer.do" method="post">
-							<button style="button" name="id" value="${b.id}">Delete</button>
+							<button class="btn btn-primary style="button" name="id" value="${b.id}">Delete</button>
 						</form></td>
 					<td>${b.id}</td>
 					<td>${b.fullName}</td>
