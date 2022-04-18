@@ -4,8 +4,7 @@
 
 This program demonstrates multiple uses of CRUD operations in a full stack Java program. The program utilizes JPA and Spring Boot to work, as they allowed me to use necessary functions like POJO entities, mapping, etc.
 
-The database tied to the site is a boxer database. This database contains information on boxers from the past and present, as well as their boxing statistics. You can add, remove, update, and search for boxers in the database. You can add and update boxers using forms to fill out or change their fields. In order to remove or update boxers, you will have to search for them in the database. The result page for each individual boxer will have an option to update or remove the boxer. The site does have separate pages to update and remove, but they redirect you to the boxer search page. This is because I felt it would be a waste of time building multiple forms that performed similar functions.
-
+The database tied to the site is a boxer database. This database contains information on boxers from the past and present, as well as their boxing statistics. You can add, remove, update, and search for boxers in the database. You can add and update boxers using forms to fill out or change their fields. In order to remove or update boxers, you will have to search for them in the database. The result page for each individual boxer will have an option to update or remove the boxer. The site does have separate pages to update and remove, and they display tables to view all current boxers in the database.
 Here are all of the fields a boxer entity contains:
 
 - ID.
