@@ -52,6 +52,8 @@ public class BoxerController {
 	
 	@RequestMapping(path=  "matchup.do")
 	public String matchup(Model model) {
+		List<Boxer> boxers = dao.getAllBoxers();
+		model.addAttribute("boxers", boxers);
 		return "matchup";
 	}
 	
