@@ -38,11 +38,15 @@ public class BoxerController {
 	
 	@RequestMapping(path=  "update.do")
 	public String update(Model model) {
+		List<Boxer> boxers = dao.getAllBoxers();
+		model.addAttribute("boxers", boxers);
 		return "update";
 	}
 	
 	@RequestMapping(path=  "remove.do")
 	public String remove(Model model) {
+		List<Boxer> boxers = dao.getAllBoxers();
+		model.addAttribute("boxers", boxers);
 		return "remove";
 	}
 	
@@ -60,42 +64,59 @@ public class BoxerController {
 	// SEARCH CONTROLLERS
 	
 	@PostMapping("searchById.do")
-	public String searchbyid(int id, Model model, RedirectAttributes redir) {
-		Boxer boxer = dao.findById(id);
-		redir.addFlashAttribute("boxer", boxer);
-		return "redirect:searchedById.do";
+	public String searchbyid(String word, Model model, RedirectAttributes redir) {
+		String map = "";
+		
+			String keyword = word;
+
+			try {
+
+				int newId = Integer.parseInt(word);
+				Boxer b = dao.findById(newId);
+				redir.addFlashAttribute("boxer", b);
+				map ="redirect:searchedById.do";
+
+			} catch (Exception e) {
+
+				List<Boxer> k = dao.findByName(keyword);
+				
+				redir.addFlashAttribute("search", keyword);
+				redir.addFlashAttribute("boxer", k);
+				map = "redirect:searchedByName.do";
+			}
+		return map;
 	}
 	
 	@GetMapping("searchedById.do")
 	public String searchedbyid(Model model) {
 		return "result";
 	}
-	
-	@PostMapping("searchByName.do")
-	public String searchbyname(String name, Model model, RedirectAttributes redir) {
-		List<Boxer> boxer = dao.findByName(name);
-		redir.addFlashAttribute("search", name);
-		redir.addFlashAttribute("boxer", boxer);
-		return "redirect:searchedByName.do";
-	}
-	
+//	
+//	@PostMapping("searchByName.do")
+//	public String searchbyname(String name, Model model, RedirectAttributes redir) {
+//		List<Boxer> boxer = dao.findByName(name);
+//		redir.addFlashAttribute("search", name);
+//		redir.addFlashAttribute("boxer", boxer);
+//		return "redirect:searchedByName.do";
+//	}
+//	
 	@GetMapping("searchedByName.do")
 	public String searchedbyname(Model model) {
 		return "multipleresult";
 	}
-	
-	@PostMapping("searchByWeightClass.do")
-	public String searchbyweightclass(String wc, Model model, RedirectAttributes redir) {
-		List<Boxer> boxer = dao.findByWeightClass(wc);
-		redir.addFlashAttribute("search", wc);
-		redir.addFlashAttribute("boxer", boxer);
-		return "redirect:searchedByWeightClass.do";
-	}
-	
-	@GetMapping("searchedByWeightClass.do")
-	public String searchedbyweightclass(Model model) {
-		return "multipleresult";
-	}
+//	
+//	@PostMapping("searchByWeightClass.do")
+//	public String searchbyweightclass(String wc, Model model, RedirectAttributes redir) {
+//		List<Boxer> boxer = dao.findByWeightClass(wc);
+//		redir.addFlashAttribute("search", wc);
+//		redir.addFlashAttribute("boxer", boxer);
+//		return "redirect:searchedByWeightClass.do";
+//	}
+//	
+//	@GetMapping("searchedByWeightClass.do")
+//	public String searchedbyweightclass(Model model) {
+//		return "multipleresult";
+//	}
 	
 	// ADD CONTROLLERS
 	

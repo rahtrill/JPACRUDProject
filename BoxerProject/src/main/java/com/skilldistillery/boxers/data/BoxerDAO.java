@@ -12,4 +12,5 @@ public interface BoxerDAO {
 	public Boxer updateBoxer(Boxer boxer);
 	public boolean deleteBoxer(Boxer boxer);
 	public List<Integer> matchupBoxers(Boxer boxer1, Boxer boxer2);
+	public List<Boxer> getAllBoxers();
 }

@@ -30,18 +30,29 @@ public class BoxerDaoJpaImpl implements BoxerDAO {
 	
 	@Override
 	public List<Boxer> findByName(String name) {
-		String query = "SELECT boxer FROM Boxer boxer WHERE boxer.firstName LIKE :fname OR boxer.lastName LIKE :lname";
+		String query = "SELECT boxer FROM Boxer boxer WHERE boxer.firstName LIKE :fname OR boxer.lastName LIKE :lname OR boxer.weightClass LIKE :wc";
 		
-		List<Boxer> boxer = em.createQuery(query).setParameter("fname", "%" + name + "%").setParameter("lname", "%" + name + "%").getResultList();
+		List<Boxer> boxer = em.createQuery(query).setParameter("fname", "%" + name + "%").setParameter("lname", "%" + name + "%").setParameter("wc", name).getResultList();
 		
 		return boxer;
 	}
+	
+	// DEPRECATED
 	
 	@Override
 	public List<Boxer> findByWeightClass(String wc) {
 		String query = "SELECT boxer FROM Boxer boxer WHERE boxer.weightClass LIKE :wc";
 		
 		List<Boxer> boxer = em.createQuery(query).setParameter("wc", "%" + wc + "%").getResultList();
+		
+		return boxer;
+	}
+	
+	@Override
+	public List<Boxer> getAllBoxers() {
+		String query = "SELECT boxer FROM Boxer boxer";
+		
+		List<Boxer> boxer = em.createQuery(query).getResultList();
 		
 		return boxer;
 	}

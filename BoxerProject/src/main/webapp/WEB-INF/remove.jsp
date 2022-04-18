@@ -9,21 +9,38 @@
 </head>
 <body>
 
-<%@ include file="bootstrapSetup.jsp" %>
+	<%@ include file="bootstrapSetup.jsp"%>
 
-<nav class="navbar navbar-dark bg-dark">
-	<span class="navbar-brand mb-0 h1">Remove Boxer</span>
-  <a class="navbar-brand" href="home.do">Home</a>
-  <a class="navbar-brand" href="search.do">Search</a>
-  <a class="navbar-brand" href="add.do">Add</a>
-  <a class="navbar-brand" href="update.do">Update</a>
-  <a class="navbar-brand" href="remove.do">Remove</a>
-  <a class="navbar-brand" href="matchup.do">Match-Up</a>
-</nav>
-	
-	<h1>Delete By Searching:</h1>
-
-<a href="search.do">Search here</a>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Delete</th>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Height</th>
+				<th scope="col">Reach</th>
+				<th scope="col">Knockouts</th>
+				<th scope="col">Total Fights</th>
+				<th scope="col">Weight Classes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="b" items="${boxers}">
+				<tr>
+					<td scope="row"><form action="deleteBoxer.do" method="post">
+							<button style="button" name="id" value="${b.id}">Delete</button>
+						</form></td>
+					<td>${b.id}</td>
+					<td>${b.fullName}</td>
+					<td>${b.height}</td>
+					<td>${b.reach}</td>
+					<td>${b.knockouts}</td>
+					<td>${b.totalFights}</td>
+					<td>${b.weightClass}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 
 </body>
 </html>

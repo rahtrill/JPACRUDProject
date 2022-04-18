@@ -11,19 +11,36 @@
 
 <%@ include file="bootstrapSetup.jsp" %>
 
-<nav class="navbar navbar-dark bg-dark">
-	<span class="navbar-brand mb-0 h1">Update Boxer</span>
-  <a class="navbar-brand" href="home.do">Home</a>
-  <a class="navbar-brand" href="search.do">Search</a>
-  <a class="navbar-brand" href="add.do">Add</a>
-  <a class="navbar-brand" href="update.do">Update</a>
-  <a class="navbar-brand" href="remove.do">Remove</a>
-  <a class="navbar-brand" href="matchup.do">Match-Up</a>
-</nav>
-
-<h1>Update By Searching:</h1>
-
-<a href="search.do">Search here</a>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Update</th>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Height</th>
+				<th scope="col">Reach</th>
+				<th scope="col">Knockouts</th>
+				<th scope="col">Total Fights</th>
+				<th scope="col">Weight Classes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="b" items="${boxers}">
+				<tr>
+					<td scope="row"><form action="updateForm.do" method="get">
+							<button style="button" name="id" value="${b.id}">Update</button>
+						</form></td>
+					<td>${b.id}</td>
+					<td>${b.fullName}</td>
+					<td>${b.height}</td>
+					<td>${b.reach}</td>
+					<td>${b.knockouts}</td>
+					<td>${b.totalFights}</td>
+					<td>${b.weightClass}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 
 </body>
 </html>

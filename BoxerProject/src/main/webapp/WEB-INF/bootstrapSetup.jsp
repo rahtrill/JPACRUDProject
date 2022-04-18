@@ -13,15 +13,49 @@
 </head>
 <style>
 .card {
-	 margin: 0 auto; /* Added */
-     float: none; /* Added */
-     margin-bottom: 20px; /* Added */
-     margin-top: 20px; /* Added */
-     margin-left: 20px;
-     margin-right: 20px;
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 20px; /* Added */
+	margin-top: 20px; /* Added */
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.centered {
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+.centerfurther {
+	top: 60%;
+}
+
+.red {
+	text-align: center;
+	color: red;
+}
+
+.green {
+	text-align: center;
+	color: green;
 }
 </style>
 <body>
+
+<nav class="navbar navbar-dark bg-dark">
+	<span class="navbar-brand mb-0 h1">Boxer Project</span>
+  <a class="navbar-brand" href="home.do">Home</a>
+  <a class="navbar-brand" href="search.do">Search</a>
+  <a class="navbar-brand" href="add.do">Add</a>
+  <a class="navbar-brand" href="update.do">Update</a>
+  <a class="navbar-brand" href="remove.do">Remove</a>
+  <a class="navbar-brand" href="matchup.do">Match-Up</a>
+</nav>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
