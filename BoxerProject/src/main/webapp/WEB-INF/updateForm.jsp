@@ -9,38 +9,147 @@
 </head>
 <body>
 
-<%@ include file="bootstrapSetup.jsp" %>
+	<%@ include file="bootstrapSetup.jsp"%>
 
-<nav class="navbar navbar-dark bg-dark">
-	<span class="navbar-brand mb-0 h1">Update Boxer</span>
-  <a class="navbar-brand" href="home.do">Home</a>
-  <a class="navbar-brand" href="search.do">Search</a>
-  <a class="navbar-brand" href="add.do">Add</a>
-  <a class="navbar-brand" href="update.do">Update</a>
-  <a class="navbar-brand" href="remove.do">Remove</a>
-  <a class="navbar-brand" href="matchup.do">Match-Up</a>
-</nav>
-	
-<form action="updateBoxer.do" method="post">
-	First Name: <input type="text" name="firstName" value="${boxer.firstName}">
-	<br>
-	Last Name: <input type="text" name="lastName" value="${boxer.lastName}">
-	<br>
-	Height (in inches): <input type="text" name="height" value="${boxer.height}">
-	<br>
-	Weight Class(s): <input type="text" name="weightClass" value="${boxer.weightClass}">
-	<br> 
-	Nationality: <input type="text" name="nationality" value="${boxer.nationality}">
-	<br>
-	Reach (in inches): <input type="text" name="reach" value="${boxer.reach}">
-	<br>
-	Total Knockouts: <input type="text" name="knockouts" value="${boxer.knockouts}">
-	<br>
-	Total Fights: <input type="text" name="totalFights" value="${boxer.totalFights}">
-	<br>
-	<input type="hidden" name="id" value="${boxer.id}">
-	<input type="submit" name="submit">
-	</form>
+	<nav class="navbar navbar-dark bg-dark">
+		<span class="navbar-brand mb-0 h1">Update Boxer</span> <a
+			class="navbar-brand" href="home.do">Home</a> <a class="navbar-brand"
+			href="search.do">Search</a> <a class="navbar-brand" href="add.do">Add</a>
+		<a class="navbar-brand" href="update.do">Update</a> <a
+			class="navbar-brand" href="remove.do">Remove</a> <a
+			class="navbar-brand" href="matchup.do">Match-Up</a>
+	</nav>
+
+	<div class="container">
+
+		<form class="well form-horizontal" action="updateBoxer.do" method="post"
+			id="contact_form">
+			<fieldset>
+
+				<!-- Form Name -->
+				<legend>Update a boxer</legend>
+
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">First Name</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input name="firstName"
+								value="${boxer.firstName}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Last Name</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input name="lastName"
+								value="${boxer.lastName}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Height</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-envelope"></i></span> <input name="height"
+								value="${boxer.height}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Nationality</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-earphone"></i></span> <input
+								name="nationality" value="${boxer.nationality}"
+								class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Reach</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-home"></i></span> <input name="reach"
+								value="${boxer.reach}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+				
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Weight class(s)</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-home"></i></span> <input name="weightClass"
+								value="${boxer.weightClass}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+				
+
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Total Knockouts</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-home"></i></span> <input name="knockouts"
+								value="${boxer.knockouts}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Total Fights</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-home"></i></span> <input name="totalFights"
+								value="${boxer.totalFights}" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+				
+				<input type="hidden" name="id" value="${boxer.id}">
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-warning">
+							Submit <span class="glyphicon glyphicon-send"></span>
+						</button>
+					</div>
+				</div>
+
+			</fieldset>
+		</form>
+	</div>
 
 </body>
 </html>

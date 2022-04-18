@@ -20,51 +20,132 @@
   <a class="navbar-brand" href="matchup.do">Match-Up</a>
 </nav>
 
-	<form action="addBoxer.do" method="post">
-		First Name: <input type="text" name="firstName"> <br>
-		Last Name: <input type="text" name="lastName"> <br>
-		Height (in inches): <input type="text" name="height"> <br>
-		Weight Class(s):
-		<table>
-			<tr>
-				<td><input type="checkbox" name="weightClass"
-					value="Minimumweight"> <label for="Minimumweight">Minimumweight
-						(105 lb - 108 lb)</label></td>
-				<td><input type="checkbox" name="weightClass" value="Flyweight">
-					<label for="Flyweight">Flyweight (108 lb - 118 lb)</label></td>
-				<td><input type="checkbox" name="weightClass"
-					value="Bantamweight"> <label for="Bantamweight">Bantamweight
-						(118 lb - 126 lb)</label></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="weightClass"
-					value="Featherweight"> <label for="Featherweight">Featherweight
-						(126 lb - 135 lb)</label></td>
-				<td><input type="checkbox" name="weightClass"
-					value="Lightweight"> <label for="Lightweight">Lightweight
-						(135 lb - 147 lb)</label></td>
-				<td><input type="checkbox" name="weightClass"
-					value="Welterweight"> <label for="Welterweight">Welterweight
-						(147 lb - 160 lb)</label></td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="weightClass"
-					value="Middleweight"> <label for="Middleweight">Middleweight
-						(160 lb - 175 lb)</label></td>
-				<td><input type="checkbox" name="weightClass"
-					value="Cruiserweight"> <label for="Cruiserweight">Cruiserweight
-						(175 lb - 200 lb)</label></td>
-				<td><input type="checkbox" name="weightClass"
-					value="Heavyweight"> <label for="Heavyweight">Heavyweight
-						(200 lb +)</label></td>
-			</tr>
-		</table>
-		<br> Nationality: <input type="text" name="nationality">
-		<br> Reach (in inches): <input type="text" name="reach">
-		<br> Total Knockouts: <input type="text" name="knockouts">
-		<br> Total Fights: <input type="text" name="totalFights">
-		<br> <input type="submit" name="submit">
-	</form>
+	<div class="container">
+
+    <form class="well form-horizontal" action="addBoxer.do" method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add a boxer</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="firstName" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="lastName" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">Height</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="height" placeholder="(Inches)" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Nationality</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="nationality" placeholder="American, Mexican, etc" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Reach</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="reach" placeholder="(Inches)" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">Total Knockouts</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="knockouts" placeholder="Total Knockouts" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Total Fights</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="totalFights" placeholder="Total Fights" class="form-control"  type="text">
+    </div>
+</div>
+</div>
+
+<!-- Select Basic -->
+   
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Weight Class</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="weightClass" class="form-control selectpicker" >
+      <option value="null" >Select A Weight Class</option>
+      <option value="Minimumweight">Minimumweight (105 - 112 lb)</option>
+      <option value="Flyweight">Flyweight (112 - 118 lb)</option>
+      <option value="Bantamweight">Bantamweight (118 - 126 lb)</option>
+      <option value="Featherweight">Featherweight (126 - 135 lb)</option>
+      <option value="Lightweight">Lightweight (135 - 147 lb)</option>
+      <option value="Welterweight">Welterweight (147 - 168 lb)</option>
+      <option value="Middleweight">Middleweight (168 - 175 lb)</option>
+      <option value="Cruiserweight">Cruiserweight (175 - 200 lb)</option>
+      <option value="Heavyweight">Heavyweight (200 lb +)</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
 
 </body>
 </html>
